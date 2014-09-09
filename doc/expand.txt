@@ -1,0 +1,82 @@
+*expand.txt*	Plugin to expand or evaluate expressions
+                                                Last change: 2014 Sep 10.
+
+SYNOPSIS						*expand-synopsis*
+>
+	" in a buffer opens "example.txt"
+	v:lang
+	&background
+	'%:t'
+	printf('*%s*',expand('%:t:r'))
+
+	" hit <Leader>ex on each identifier for expanding
+	ja
+	dark
+	example.txt
+
+	" hit <Leader>ev on each identifier for evaluating
+	ja
+	dark
+	%:t
+	*example*
+
+DESCRIPTION					*expand-description*
+
+Plugin to expand or evaluate |expression|s (|filename-modifiers|, VIM
+|variables|, |options| and environment variables) in the current buffer.  Both
+feature's targets are <cWORD>.
+
+DEPENDENCIES					*expand-dependencies*
+
+This plugin requires following autoload file.
+
+https://github.com/januswel/jwlib.vim/blob/master/autoload/jwlib/buf/replace.vim
+
+See https://github.com/januswel/jwlib.vim
+
+PROVIDES						*expand-provides*
+
+Mappings:
+<Leader>ex or <Plug>ExpandVariable
+	Expand expressions.
+
+<Leader>ev or <Plug>EvalExpression
+	Evaluate expressions.
+
+SETTINGS						*expand-settings*
+
+DISABLES
+
+Variables:
+g:loaded_expand
+	When exists, does nothing. Use to disable this plugin.
+
+g:no_expand_maps
+	When non-zero, doesn't register any effective mappings.
+
+g:no_plugin_maps
+	When non-zero, doesn't register any effective mappings. This variable
+	may have an affect on mappings of other plugins. Use
+	"g:no_expand_maps" to disable only mappings defined by this plugin.
+
+KOWN ISSUES					*expand-knownissues*
+
+For several option with top of '&' (see |:let-&|), may be expanded to an
+irrelevant value. E.g. "&statusline", "&tabline" etc. When an option is
+expanded incorrectly, use evaluating instead. This is the issue of VIM itself,
+not the other way around the one of this plugin.
+
+
+==============================================================================
+
+Author
+	janus_wel <janus.wel.3@gmail.com>
+Copyright
+	(c) 2014 by janus_wel
+License
+	This material may be distributed only subject to the terms and
+	conditions set forth in the Open Publication License, v1.0 or later
+	(the latest version is presently available at
+	http://www.opencontent.org/openpub/).
+
+vim:tw=78:ts=8:noet:ft=help:norl:
