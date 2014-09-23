@@ -1,5 +1,5 @@
 *expand.txt*	Plugin to expand or evaluate expressions
-                                                Last change: 2014 Sep 10.
+                                                Last change: 2014 Sep 24.
 
 SYNOPSIS						*expand-synopsis*
 >
@@ -72,7 +72,7 @@ not the other way around the one of this plugin.
 Author
 	janus_wel <janus.wel.3@gmail.com>
 Copyright
-	(c) 2014 by janus_wel
+	(c) 2010-2014 by janus_wel
 License
 	This material may be distributed only subject to the terms and
 	conditions set forth in the Open Publication License, v1.0 or later
